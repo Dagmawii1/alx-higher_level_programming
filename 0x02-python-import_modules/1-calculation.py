@@ -1,13 +1,12 @@
 #!/usr/bin/python3
+
 if __name__ == "__main__":
-    import sys
-    total = len(sys.argv)
-    if total <= 1:
-        print("0 arguments.")
-    else:
-        if total == 2:
-            print("{:d} argument:".format(total - 1))
-        else:
-            print("{:d} arguments:".format(total - 1))
-        for i in range(1, total):
-            print("{:d}: {}".format(i, sys.argv[i]))
+    '''My first calculator with python'''
+    from calculator_1 import add, sub, mul, div
+
+    a = 10
+    b = 5
+    print("{} + {} = {}".format(a, b, add(a, b)))
+    print("{} - {} = {}".format(a, b, sub(a, b)))
+    print("{} * {} = {}".format(a, b, mul(a, b)))
+    print("{} / {} = {}".format(a, b, div(a, b)))
