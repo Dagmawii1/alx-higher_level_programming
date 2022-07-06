@@ -1,15 +1,13 @@
 #!/usr/bin/python3
-
 if __name__ == "__main__":
-    """Let's manage the arguments"""
     import sys
 
-    index = len(sys.argv) - 1
-    if (index == 0):
-        print("0 arguments.")
-    elif (index == 1):
-        print("1 argument:")
+    if (len(sys.argv) == 1):
+        print('{} arguments.'.format(0))
+    elif (len(sys.argv) == 2):
+        print('{} argument:'.format(1))
+        print('{}: {}'.format(1, sys.argv[1]))
     else:
-        print("{} arguments:".format(index))
-    for i in range(index):
-        print("{}: {}".format(i + 1, sys.argv[i + 1]))
+        print('{} arguments:'.format(len(sys.argv) - 1))
+        for i in range(1, len(sys.argv)):
+            print('{}: {}'.format(i, sys.argv[i]))

@@ -1,25 +1,22 @@
 #!/usr/bin/python3
-
 if __name__ == "__main__":
-    '''My calculator'''
     from calculator_1 import add, sub, mul, div
     import sys
 
-    if (len(sys.argv) - 1 != 3):
-        print("Usage: ./100-my_calculator.py <a> <operator> <b>")
-        sys.exit(1)
+    if (len(sys.argv) != 4):
+        print('Usage: {} <a> <operator> <b>'.format(sys.argv[0]))
+        exit(1)
 
-    a = int(sys.argv[1])
-    b = int(sys.argv[3])
-    operator = sys.argv[2]
-    if (operator == "+"):
-        print("{} + {} = {}".format(a, b, add(a, b)))
-    elif (operator == "-"):
-        print("{} - {} = {}".format(a, b, sub(a, b)))
-    elif (operator == "*"):
-        print("{} * {} = {}".format(a, b, mul(a, b)))
-    elif (operator == "/"):
-        print("{} / {} = {}".format(a, b, div(a, b)))
-    else:
-        print("Unknown operator. Available operators: +, -, * and /")
-        sys.exit(1)
+    if (sys.argv[2] not in '+-*/'):
+        print('Unknown operator. Available operators: +, -, * and /')
+        exit(1)
+
+    lst = [(add, '+'), (sub, '-'), (mul, '*'), (div, '/')]
+    for i in lst:
+        if (i[1] == sys.argv[2]):
+            result = i[0](int(sys.argv[1]), int(sys.argv[3]))
+    print('{} {} {} = {}'.format(
+        sys.argv[1],
+        sys.argv[2],
+        sys.argv[3],
+        result))

@@ -1,6 +1,1 @@
-|   ALX SE   |  Python  |
-| :--------: | -------- |
-| Let's do it     | Life in Coding      |
-  ![This is an image](https://myoctocat.com/assets/images/base-octocat.svg)
-| :--------: | -------- |
-|Comment      | Like :)     |
+This is a readme file
